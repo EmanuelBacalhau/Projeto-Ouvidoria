@@ -88,5 +88,6 @@ while opcao !=7:
                 print('CÓDIGO', end='')
                 for i in  maniqueb5:
                     print(' -', i, end='')
+            print()
      
 print('\033[1;31mSaindo... Volte sempre!\033[m')
