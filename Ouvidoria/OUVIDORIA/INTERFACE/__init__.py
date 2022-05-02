@@ -21,12 +21,12 @@ def leianome(txt):
         else:
             return nome
 
-def linha(tamanho=60):
+def linha(tamanho=100):
     return '=' * tamanho
 
 def cabecalho(txt):
     print(linha())
-    print(txt.center(60))
+    print(txt.center(100))
     print(linha())
 
 def menu(lista):

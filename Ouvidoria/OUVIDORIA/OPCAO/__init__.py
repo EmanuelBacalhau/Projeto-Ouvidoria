@@ -1,10 +1,13 @@
 from OUVIDORIA.INTERFACE import *
-manifestos = []
 tipos = ['Sugestão', 'Reclamação', 'Elogios']
+manifestos = []
+sugesotes = []
+reclamacoes = []
+elogios = []
 class OpcsEscondidos():
     def opc1(self, manifestos):
         if manifestos == []:
-            print(f'\033[31m{"Nehuma manifestação encontrada!":^60}\033[m')
+            print(f'\033[31m{"Nehuma manifestação encontrada!":^100}\033[m')
         else:
             cont = 1
             for sep in manifestos:
@@ -16,7 +19,9 @@ class OpcsEscondidos():
 
     def opc2(self, manifestos):
         cont = 1
-        for sep in manifestos:
+        if sugesotes == []:
+            print(f'\033[31m{"Nenhuma susgestão encontrada!":^100}\033[m')
+        for sep in sugesotes:
             maniq = sep.split('#')
             if tipos[0] == maniq[2]:  
                 maniq.pop(2)
@@ -30,7 +35,9 @@ class OpcsEscondidos():
         
     def opc3(self, manifestos):
         cont = 1
-        for sep in manifestos:
+        if reclamacoes == []:
+             print(f'\033[31m{"Nenhuma reclamação encontrada!":^100}\033[m')
+        for sep in reclamacoes:
             maniq2 = sep.split('#')
             if tipos[1] == maniq2[2]:
                 maniq2.pop(2)
@@ -44,7 +51,9 @@ class OpcsEscondidos():
 
     def opc4(self, manifestos):
         cont = 1
-        for sep in manifestos:
+        if elogios == []:
+            print(f'\033[31m{"Nenhum elogio encontrado!":^100}\033[m')
+        for sep in elogios:
             maniq3 = sep.split('#')
             if tipos[2] == maniq3[2]:
                 maniq3.pop(2)
@@ -69,7 +78,15 @@ class OpcsEscondidos():
         d = leianome('\033[32mDigite sua descrição: \033[m')
         print(linha())
         manitotal = prot + '#' + n + '#' + tipos[opc - 1] + '#' + d
-        manifestos.append(manitotal)
+        if opc == 1:
+            sugesotes.append(manitotal)
+            manifestos.append(manitotal)
+        elif opc == 2:
+            reclamacoes.append(manitotal)
+            manifestos.append(manitotal)
+        elif opc == 3:
+            elogios.append(manitotal)
+            manifestos.append(manitotal)
     
     def opc6(self, manifestos):
         cont = 1
@@ -86,6 +103,6 @@ class OpcsEscondidos():
                 print(f'{cont}) PROTOCOLO', end='')
                 for i in  maniqueb5:
                     print(' -', i, end='')
-        print()
+                print()
         print(linha())
                     

@@ -3,8 +3,8 @@ from OUVIDORIA.OPCAO import *
 cabecalho('OUVIDORIA ABC')
 while True:
     ops = OpcsEscondidos()
-    resp = menu(['Listar todas manifestações', 'Listar todas sugestções', 'Listar todas reclamações',
-    'Listar todos elogios', 'Enviar nova manifestação', 'Pesquisar manifestação pelo protocolo', 'Sair'])
+    resp = menu(['Listar todas manifestações', 'Listar todas sugestões', 'Listar todas reclamações',
+    'Listar todos elogios', 'Criar nova manifestação', 'Pesquisar manifestação pelo protocolo', 'Sair'])
     if resp == 1:
       cabecalho('Manifestação: ')
       ops.opc1(manifestos) 
