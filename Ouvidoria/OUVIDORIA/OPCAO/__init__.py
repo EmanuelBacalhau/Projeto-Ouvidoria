@@ -73,23 +73,19 @@ class OpcsEscondidos():
     
     def opc6(self, manifestos):
         cont = 1
-        protn = 0
-        tam = len(manifestos)
-        if manifestos == []:
-            print(f'\033[31m{"Nehum protocolo encontrado!":^60}\033[m')
-            print(linha())
-        else:
-            protn = leiaint('\033[32mDigite o número do seu protocolo: \033[m')
-            if protn > tam or protn < tam:
-                print('\033[31mProtocolo não encontrado, consulte-o novamente!\033[m')
-            else:
-                for sep in manifestos:
-                    maniq4 = sep.split('#')
-                    if int(maniq4[0]) == protn:
-                        print(f'{cont}) PROTOCOLO', end='')
-                        cont += 1
-                        for imp in maniq4:
-                            print(f' - {imp}', end='')
-                        print()
-                print(linha())
+        numeroprot = -1
+        tamanhoproto = len(manifestos)
+        while numeroprot <= 0 or numeroprot > tamanhoproto:
+            numeroprot = leiaint('\033[32mInforme o número do protocolo: \033[m') 
+            if numeroprot <= 0 or numeroprot > tamanhoproto:
+                print('\033[31mNúmero do protolo inválido, consulte-o novamente!\033[m')
+                break
+        for i in manifestos:
+            maniqueb5 = i.split('#')
+            if int(maniqueb5[0]) == numeroprot:
+                print(f'{cont}) PROTOCOLO', end='')
+                for i in  maniqueb5:
+                    print(' -', i, end='')
+        print()
+        print(linha())
                     

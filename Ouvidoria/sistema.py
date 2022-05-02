@@ -21,7 +21,7 @@ while True:
       cabecalho('Novo Manifesto: ')
       ops.opc5(tipos)
     elif resp == 6:
-      cabecalho('Procolos: ')
+      cabecalho('Protocolos: ')
       ops.opc6(manifestos)
     elif resp == 7:
       cabecalho('Saindo... Até logo!')
