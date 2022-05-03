@@ -5,7 +5,7 @@ sugesotes = []
 reclamacoes = []
 elogios = []
 class OpcsEscondidos(): # criação de classe para por as funções(códigos) do sistema principal
-    def opc1(self, manifestos): # opção 1 == código para por todas manifestações
+    def opcao1(self, manifestos): # opção 1 == código para por todas manifestações
         if manifestos == []:
             print(f'\033[31m{"Nehuma manifestação encontrada!":^100}\033[m')
         else:
@@ -17,7 +17,7 @@ class OpcsEscondidos(): # criação de classe para por as funções(códigos) do
         print(linha())
         return manifestos
 
-    def opc2(self, manifestos): # opção 2 == codigo para por todas as sugestões
+    def opcao2(self, manifestos): # opção 2 == codigo para por todas as sugestões
         cont = 1
         if sugesotes == []:
             print(f'\033[31m{"Nenhuma susgestão encontrada!":^100}\033[m')
@@ -33,7 +33,7 @@ class OpcsEscondidos(): # criação de classe para por as funções(códigos) do
         print(linha())
         return manifestos
         
-    def opc3(self, manifestos): # opção 3 == código para por todas as reclamações
+    def opcao3(self, manifestos): # opção 3 == código para por todas as reclamações
         cont = 1
         if reclamacoes == []:
              print(f'\033[31m{"Nenhuma reclamação encontrada!":^100}\033[m')
@@ -49,7 +49,7 @@ class OpcsEscondidos(): # criação de classe para por as funções(códigos) do
         print(linha())
         return manifestos
 
-    def opc4(self, manifestos): # opção 4 == código para por todos os elogios 
+    def opcao4(self, manifestos): # opção 4 == código para por todos os elogios 
         cont = 1
         if elogios == []:
             print(f'\033[31m{"Nenhum elogio encontrado!":^100}\033[m')
@@ -64,9 +64,9 @@ class OpcsEscondidos(): # criação de classe para por as funções(códigos) do
         print(linha())
         return manifestos
 
-    def opc5(self, tipos): # opção 5 == código para criar nova manifestação
-        opc = 0
-        prot = str(len(manifestos) + 1)
+    def opcao5(self, tipos): # opção 5 == código para criar nova manifestação
+        opcao = 0
+        protocolo = str(len(manifestos) + 1)
         n = leianome('\033[32mRequisitante: \033[m')
         while opc < 1 or opc > 3:
             opc = menu(['1) Sugestão', '2) Reclamação', '3) Elogio']) # menu formatado em no modulo interface
@@ -74,7 +74,7 @@ class OpcsEscondidos(): # criação de classe para por as funções(códigos) do
                 print('\033[31mTipo de manifesto inválido!\033[m')
         d = leianome('\033[32mDigite sua descrição: \033[m')
         print(linha())
-        manitotal = prot + '#' + n + '#' + tipos[opc - 1] + '#' + d
+        manitotal = protocolo + '#' + n + '#' + tipos[opc - 1] + '#' + d
         if opc == 1: # adicionar nas listas
             sugesotes.append(manitotal)
             manifestos.append(manitotal)
@@ -85,7 +85,7 @@ class OpcsEscondidos(): # criação de classe para por as funções(códigos) do
             elogios.append(manitotal)
             manifestos.append(manitotal)
     
-    def opc6(self, manifestos): # opção 6 == código para pesquisar qualquer manifesto por ID(número)
+    def opcao6(self, manifestos): # opção 6 == código para pesquisar qualquer manifesto por ID(número)
         cont = 1
         numeroprot = -1
         tamanhoproto = len(manifestos)
