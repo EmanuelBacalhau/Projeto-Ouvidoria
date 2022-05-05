@@ -1,6 +1,7 @@
 from INTERFACE import *
+import operacoesbd
 class Manifescoes:
-    tipos = ['Sugestão', 'Reclamação', 'Elogios'] 
+    tipos = 'Sugestão', 'Reclamação', 'Elogios'
     manifest = []
     sugesotes = []
     reclamacoes = []
@@ -89,13 +90,11 @@ class Opcoes:
         manitotal = protocolo + '#' + n + '#' + manifestos.tipos[opcao - 1] + '#' + d
         if opcao == 1: # adicionar nas listas
             manifestos.sugesotes.append(manitotal)
-            manifestos.manifest.append(manitotal)
         elif opcao == 2: # adicionar nas listas
             manifestos.reclamacoes.append(manitotal)
-            manifestos.manifest.append(manitotal)
         elif opcao == 3: # adicionar nas listas
             manifestos.elogios.append(manitotal)
-            manifestos.manifest.append(manitotal)
+        manifestos.manifest.append(manitotal)
     
     def opcao6(self, manifestos): # opção 6 == código para pesquisar qualquer manifesto por ID(número)
         formatar = Formatacao()
