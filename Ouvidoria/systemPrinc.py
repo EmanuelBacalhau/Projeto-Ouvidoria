@@ -24,7 +24,6 @@ while True:
                     print(' -', i, end='')
         print()
         print(formatar.linha())
-
     elif opcao == 3: #Mostrar todas as reclamações.
         formatar.cabecalho('Reclamações:')
         for i in manifestos:
