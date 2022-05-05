@@ -1,12 +1,9 @@
 from INTERFACE import *
 from OPCOES import *
-
-
 validar = Validacao()
 formatar = Formatacao()
 manifestos = Manifescoes()
 OPcao = Opcoes()
-
 formatar.cabecalho('OUVIDORIA ABC')
 while True:
     resp = formatar.menu(['Listar todas manifestações', 'Listar todas as sugestões', 'Listar todas as reclamações', 'Listar todos elogios', 'Criar novo manifesto', 'Pesquisar protcolo por ID', 'Sair'])

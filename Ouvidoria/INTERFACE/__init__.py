@@ -34,5 +34,5 @@ class Formatacao:
             print(f'\033[33m{contador})\033[m \033[34m{itens}\033[m')
             contador += 1
         print('='*100)
-        opcao = vali.leiaint('Sua opção: ')
+        opcao = vali.leiaint('\033[32mSua opção: \033[m')
         return opcao

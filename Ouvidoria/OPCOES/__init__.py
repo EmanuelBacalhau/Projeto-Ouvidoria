@@ -1,5 +1,4 @@
 from INTERFACE import *
-import operacoesbd
 class Manifescoes:
     tipos = 'Sugestão', 'Reclamação', 'Elogios'
     manifest = []
