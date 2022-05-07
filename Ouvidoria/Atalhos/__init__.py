@@ -16,8 +16,6 @@ class Validacao:
                 print('\033{31mErro: Insira um nome válido.\033[m')
             else:
                 return nome
-
-
 class Formatacao: 
     def linha(self, tamanho=100):
         return '=' * tamanho
