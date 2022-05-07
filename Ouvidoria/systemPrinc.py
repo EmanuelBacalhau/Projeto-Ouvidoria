@@ -13,19 +13,17 @@ while True:
         codigoSQL = 'Select * from manifestos'
         listarSQL = listarBancoDados(abrirBD, codigoSQL)
         for listBDD in listarSQL:
-            listartotal = '-' + str(listBDD[0])+ ' - ' + listBDD[1] + ' - '+ listBDD[2] + ' - ' + listBDD[3]
-            print(f'Protocolo{listartotal}')
+            listartotal ='Protocolo' + ' - ' + str(listBDD[0])+ ' - ' + listBDD[1] + ' - '+ listBDD[2] + ' - ' + listBDD[3]
+            print(listartotal)
         print(formatar.linha())
-
     elif opcao == 2: #Mostrar sugestões as disponiveís.
         formatar.cabecalho('Sugestões:')
         codigoSQL = 'Select * from manifestos where Tipo = "Sugestão"'
         listarSQL = listarBancoDados(abrirBD, codigoSQL)
         for listBDD in listarSQL:
-            listartotal = 'Protocolo' + ' - ' + str(listBDD[0]) + ' - ' + listBDD[1] + ' - ' + listBDD[3]
+            listartotal = 'Protocolo ' + ' - ' + str(listBDD[0]) + ' - ' + listBDD[1] + ' - ' + listBDD[3]
             print(listartotal)
         print(formatar.linha())
-
     elif opcao == 3: #Mostrar todas as reclamações.
         formatar.cabecalho('Reclamações:')
         codigoSQL = 'Select * from manifestos where Tipo = "Reclamação"'
@@ -34,7 +32,6 @@ while True:
             listartotal = 'Protocolo' + ' - ' + str(listBDD[0]) + ' - ' + listBDD[1] + ' - ' + listBDD[3]
             print(listartotal)
         print(formatar.linha())
-
     elif opcao == 4: #Mostrar todos os elogios.
         formatar.cabecalho('Elogios:')
         codigoSQL = 'Select * from manifestos where Tipo = "Elogio"'
@@ -43,20 +40,18 @@ while True:
             listartotal = 'Protocolo' + ' - ' + str(listBDD[0]) + ' - ' + listBDD[1] + ' - ' + listBDD[3]
             print(listartotal)
         print(formatar.linha())    
-
     elif opcao == 5: #Enviar nova manifestação conforme seu tipo.
         tipo = 0
-        nome = validar.leianome('Requisitante: ')
+        nome = validar.leianome('\033[32mRequisitante: \033[m')
         while tipo < 1 or tipo > 3:
             tipo = formatar.menu(['Sugestão', 'Reclamação', 'Elogio'])
             if tipo < 1 or tipo > 3: #Menor que 1 ou maiores que 3 ==> Opção inválida.
                 print('Opção inválida!')
-        descricao = validar.leianome('Digite seu manifesto: ')
+        descricao = validar.leianome('\033[32mDigite seu manifesto: \033[m')
         print(formatar.linha())
         sql = "INSERT INTO manifestos(Nome,Tipo,Descricao) VALUES (%s, %s, %s)"
         dados = (nome, tipos[tipo - 1], descricao)
         insertNoBancoDados(abrirBD,sql,dados)
-
     elif opcao == 6: #Pesquisar manifetações por número(ID).
         numeroprot = -1
         manifestacoes = 'select protocolo from manifestos'
@@ -70,11 +65,10 @@ while True:
         pesqprotocolo = 'Select * from manifestos where Protocolo='+str(numeroprot)
         listarSQL = listarBancoDados(abrirBD, pesqprotocolo)
         for listBDD in listarSQL:
-            listartotal = 'Protocolo' + ' - ' + str(listBDD[0]) + ' - ' + listBDD[1] + ' - ' + listBDD[2] + ' - ' + listBDD[3]
+            listartotal = 'Protocolo ' + ' - ' + str(listBDD[0]) + ' - ' + listBDD[1] + ' - ' + listBDD[2] + ' - ' + listBDD[3]
             print(listartotal) 
         print(formatar.linha())
     elif opcao == 7:
         print('Saindo...')
         break
-    
 encerrarBancoDados(abrirBD)
