@@ -53,15 +53,9 @@ while True:
         dados = (nome, tipos[tipo - 1], descricao)
         insertNoBancoDados(abrirBD,sql,dados)
     elif opcao == 6: #Pesquisar manifetações por número(ID).
-        numeroprot = -1
         manifestacoes = 'select protocolo from manifestos'
         protocolo = listarBancoDados(abrirBD, manifestacoes)
-        tamprotocolo = len(protocolo)
-        while numeroprot <= 0 or numeroprot > tamprotocolo: 
-            numeroprot = validar.leiaint('Informe o número do protocolo: ') #Pesquisar manifestação por número.
-            if numeroprot <= 0 or numeroprot > tamprotocolo: #Menor ou igual 0, ou maior que o tamanho do protocolo imprime o print.
-                print('Número do protolo inválido, consulte-o novamente!')
-                break
+        numeroprot = validar.leiaint('\033[32mInforme o número do protocolo: \033[m') #Pesquisar manifestação por número.
         pesqprotocolo = 'Select * from manifestos where Protocolo='+str(numeroprot)
         listarSQL = listarBancoDados(abrirBD, pesqprotocolo)
         for listBDD in listarSQL:
