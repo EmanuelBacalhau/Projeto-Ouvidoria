@@ -3,7 +3,6 @@ from MySql.operacoesbd import *
 abrirBD = abrirBancoDados('localhost', 'root', '1514131211', 'ouvidoria')
 validar = Validacao()
 formatar = Formatacao()
-opcao = 0 
 tipos = 'Sugestão', 'Reclamação', 'Elogio'
 formatar.cabecalho('OUVIDORIA ABC')
 while True:
@@ -65,4 +64,6 @@ while True:
     elif opcao == 7:
         print('Saindo...')
         break
+    elif opcao < 1 or opcao > 7:
+        print('\033[31mOpção inválida!\033[m')
 encerrarBancoDados(abrirBD)
