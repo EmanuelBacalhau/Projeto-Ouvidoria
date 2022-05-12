@@ -1,2 +1,2 @@
 # Projeto Ouvidoria
- Primeiro código de um aplicativoem PYTHON 
+ Projeto criado em Python com uso de classes, def e banco de dados!
